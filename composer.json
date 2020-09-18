@@ -1,0 +1,40 @@
+{
+    "name": "attraction/google-iam-roles",
+    "type": "library",
+    "description": "Manages your user's custom IAM roles",
+    "keywords": [
+        "google-iap",
+        "iap",
+        "permissions",
+        "google-iam",
+        "iam",
+        "google",
+        "google-cloud",
+        "gcp",
+        "roles",
+        "role"
+    ],
+    "homepage": "https://attr.dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Frederic Houle",
+            "email": "frederic@frederichoule.com",
+            "homepage": "https://frederichoule.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/attrdev/google-iam-roles/issues",
+        "source": "https://github.com/attrdev/google-iam-roles"
+    },
+    "require": {
+        "php": ">=7.4",
+        "guzzlehttp/guzzle": "^7.0",
+        "google/apiclient": "^2.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Attraction\\": "src/Attraction"
+        }
+    }
+}
