@@ -167,12 +167,15 @@ class GoogleIAMRoles
 
         $emailRolesMap = $this->cache('emailRolesMap', function () {
             $projectRoles = $this->getProjectRoles();
+
             $emailRolesMap = [];
 
             foreach ($projectRoles as $projectRole) {
 
-                foreach ($projectRole->members as $member) {
-                    isset($emailRolesMap[$member]) ? $emailRolesMap[$member][] = $projectRole->role : $emailRolesMap[$member] = [$projectRole->role];
+                foreach ($projectRole['members'] as $member) {
+
+                    $emailRolesMap[$member] = $emailRolesMap[$member] ?? [];
+                    $emailRolesMap[$member][] = $projectRole['role'];
                 }
             }
 
