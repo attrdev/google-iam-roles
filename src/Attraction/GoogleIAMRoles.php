@@ -34,7 +34,7 @@ class GoogleIAMRoles
         if ($forceUpdate) {
             unset($this->cacheLayer[$key]);
         }
-        return $this->cacheLayer[$key] ?? $this->cacheLayer[$key] = ($value instanceof Closure ? $value() : $value);
+        return $this->cacheLayer[$key] ?? $this->cacheLayer[$key] = ($value instanceof \Closure ? $value() : $value);
     }
 
     private function isCustomRole(string $role)
