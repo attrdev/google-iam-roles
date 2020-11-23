@@ -247,7 +247,7 @@ class GoogleIAMRoles
 
             $members = $binding->members ?? [];
             foreach ($members as $member) {
-                $emailAddress = explode('user:', $member)[1];
+                $emailAddress = explode('user:', $member)[1] ?? null;
                 if (is_null($emailAddress)) {
                     continue;
                 }
