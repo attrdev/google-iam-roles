@@ -257,7 +257,6 @@ class GoogleIAMRoles
                 }
                 $role['members'][] = $emailAddress;
             }
-            exit();
 
             $roles[] = $role;
         }
