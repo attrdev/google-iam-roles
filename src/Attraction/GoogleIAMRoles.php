@@ -247,12 +247,17 @@ class GoogleIAMRoles
 
             $members = $binding->members ?? [];
             foreach ($members as $member) {
-                $emailAddress = explode('user:', $member)[1] ?? null;
+                $split = explode(':', $member);
+                if(!in_array($split,['user','group'])) {
+                    continue;
+                }
+                $emailAddress = $split[1] ?? null;
                 if (is_null($emailAddress)) {
                     continue;
                 }
                 $role['members'][] = $emailAddress;
             }
+            exit();
 
             $roles[] = $role;
         }
