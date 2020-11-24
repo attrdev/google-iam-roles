@@ -248,7 +248,7 @@ class GoogleIAMRoles
             $members = $binding->members ?? [];
             foreach ($members as $member) {
                 $split = explode(':', $member);
-                if(!in_array($split,['user','group'])) {
+                if(!in_array($split[0],['user','group'])) {
                     continue;
                 }
                 $emailAddress = $split[1] ?? null;
